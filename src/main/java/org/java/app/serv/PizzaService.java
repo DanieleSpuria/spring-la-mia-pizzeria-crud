@@ -18,7 +18,7 @@ public class PizzaService {
 	}
 	
 	public List<Pizza> findAll() {
-		return pizzaRepo.findaAll();
+		return pizzaRepo.findAll();
 	}
 	
 	public Pizza findBtId(int id) {
