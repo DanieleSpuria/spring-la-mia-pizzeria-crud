@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<title>Pizzeria da Jama</title>
+</head>
+<body class="container d-flex justify-content-center flex-wrap">
+	
+	<h1 class="w-100 text-center py-5">Pizzeria da Jama</h1>
+	
+	<div th:if="${pizze != null}">
+		<ul>
+			<li 
+				th:each="pizza : ${pizze}"
+				th:object="${pizza}"
+				class="d-flex flex-wrap justify-content-center py-2 my-1 border border-dark rounded">
+					<span class="w-100 text-center">[[*{nome}]] - [[*{prezzo}]] €</span>
+					<img th:src="@{*{foto}}">
+			</li>
+		</ul>
+	</div>
+	
+	<h3 th:if="${pizze.isEmpty()}">Pizzeria chiusa</h3>
+	
+</body>
+</html>
