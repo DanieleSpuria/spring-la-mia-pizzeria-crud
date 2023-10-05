@@ -6,18 +6,20 @@
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 	<title>Pizzeria da Jama</title>
 </head>
-<body class="container d-flex justify-content-center flex-wrap">
+<body class="container d-flex flex-column align-items-center">
 	
-	<h1 class="w-100 text-center py-5">Pizzeria da Jama</h1>
+	<h1 class="py-5">Pizzeria da Jama</h1>
 	
 	<div th:if="${pizze != null}">
 		<ul>
 			<li 
 				th:each="pizza : ${pizze}"
 				th:object="${pizza}"
-				class="d-flex flex-wrap justify-content-center py-2 my-1 border border-dark rounded">
-					<span class="w-100 text-center">[[*{nome}]] - [[*{prezzo}]] €</span>
-					<img th:src="@{*{foto}}">
+				class="d-flex py-2 my-1 border border-dark rounded">
+					<spani class="px-2">
+						<a th:href="@{/{id} (id = *{id})}">[[*{nome}]] - [[*{prezzo}]] €</a>
+					</spani>
+					<!-- <img th:src="@{*{foto}}"> -->
 			</li>
 		</ul>
 	</div>

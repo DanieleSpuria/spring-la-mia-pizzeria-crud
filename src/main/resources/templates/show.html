@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<title>[[${{pizza.nome}}]]</title>
+</head>
+<body class="container d-flex justify-content-center flex-wrap">
+	
+	<div th:object="${pizza}" class="container d-flex align-items-center flex-column m-5">
+		
+		<h2 class="py-2">[[*{nome}]]</h2>
+		<span>Prezzo: [[*{prezzo}]] €</span>
+		<span class="py-1">Descrizione: [[*{descrizione}]]</span>
+		<img th:src="@{*{foto}}">
+		
+		<a 
+			th:href="@{/}"
+			class="py-1 border border-dark px-2 m-2 rounded">
+				HOME
+		</a>
+		
+	</div>
+	
+</body>
+</html>

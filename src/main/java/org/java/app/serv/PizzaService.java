@@ -21,7 +21,7 @@ public class PizzaService {
 		return pizzaRepo.findAll();
 	}
 	
-	public Pizza findBtId(int id) {
+	public Pizza findById(int id) {
 		return pizzaRepo.findById(id).get();
 	}
 }
