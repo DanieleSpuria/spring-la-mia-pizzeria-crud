@@ -1,8 +1,8 @@
-package org.java.app.repo;
+package org.java.app.db.repo;
 
 import java.util.List;
 
-import org.java.app.pojo.Pizza;
+import org.java.app.db.pojo.Pizza;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

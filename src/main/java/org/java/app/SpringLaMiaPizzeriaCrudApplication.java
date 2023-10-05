@@ -1,7 +1,7 @@
 package org.java.app;
 
-import org.java.app.pojo.Pizza;
-import org.java.app.serv.PizzaService;
+import org.java.app.db.pojo.Pizza;
+import org.java.app.db.serv.PizzaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

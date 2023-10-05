@@ -1,4 +1,4 @@
-package org.java.app.pojo;
+package org.java.app.db.pojo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

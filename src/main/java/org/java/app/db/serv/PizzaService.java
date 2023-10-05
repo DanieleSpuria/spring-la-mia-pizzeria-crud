@@ -1,9 +1,9 @@
-package org.java.app.serv;
+package org.java.app.db.serv;
 
 import java.util.List;
 
-import org.java.app.pojo.Pizza;
-import org.java.app.repo.PizzaRepo;
+import org.java.app.db.pojo.Pizza;
+import org.java.app.db.repo.PizzaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
