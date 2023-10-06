@@ -1,5 +1,7 @@
 package org.java.app.db.pojo;
 
+import org.hibernate.validator.constraints.Length;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,7 +16,10 @@ public class Pizza {
 	private int id;
 	
 	@Column(length = 128, nullable = false)
+	@Length(min = 3)
 	private String nome;
+	
+	@Length(min = 5)
 	private String descrizione;
 	
 	@Column(columnDefinition = "TEXT")
