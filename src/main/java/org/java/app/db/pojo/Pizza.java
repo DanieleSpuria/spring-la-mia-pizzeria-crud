@@ -16,6 +16,8 @@ public class Pizza {
 	@Column(length = 128, nullable = false)
 	private String nome;
 	private String descrizione;
+	
+	@Column(columnDefinition = "TEXT")
 	private String foto;
 	
 	@Column(nullable = false) 
@@ -74,6 +76,7 @@ public class Pizza {
 	public String toString() {
 		return "[ " + getId() + " ] : " 
 				+ getNome() + " : "
-				+ getPrezzo();
+				+ getPrezzo() + " : "
+				+ getFoto();
 	}
 }

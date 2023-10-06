@@ -15,6 +15,11 @@
 		<input type="text" name="nome" th:value="${nome}">
 	</form>
 	
+	<a 
+		th:href="@{/new-pizza}"
+		class="pb-3"
+	>Nuova pizza</a>
+	
 	<div th:if="${pizze != null}">
 		<ul>
 			<li 

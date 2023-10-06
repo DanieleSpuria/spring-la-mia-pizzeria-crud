@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nuova pizza</title>
+</head>
+<body>
+	<form th:object="${pizza}" method="post">
+		
+		<div>
+			<label>Nome</label>
+			<input type="text" name="nome" th:field="*{nome}">
+		</div>
+		
+		<div>		
+			<label>Prezzo</label>
+			<input type="number" name="prezzo" th:field="*{prezzo}">
+		</div>
+		
+		<div>
+			<label>Descrizione</label>
+			<input type="text" name="descrizione" th:field="*{descrizione}">
+		</div>
+
+		<div>
+			<label>Foto</label>
+			<input type="text" name="foto" th:field="*{foto}">	
+		</div>
+		
+		<button type="submit">Invia</button>
+	</form>
+</body>
+</html>
