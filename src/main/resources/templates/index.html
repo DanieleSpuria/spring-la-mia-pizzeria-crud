@@ -16,7 +16,7 @@
 	</form>
 	
 	<a 
-		th:href="@{/new-pizza}"
+		th:href="@{/create-update}"
 		class="pb-3"
 	>Nuova pizza</a>
 	
@@ -28,6 +28,10 @@
 				class="d-flex py-2 my-1 border border-dark rounded">
 					<span class="px-2">
 						<a th:href="@{/{id} (id = *{id})}">[[*{nome}]] - [[*{prezzo}]] €</a>
+					</span>
+					
+					<span>
+						<a th:href="@{/edit/{id} (id = *{id})}">Edit</a>
 					</span>
 					<!-- <img th:src="@{*{foto}}"> -->
 			</li>
