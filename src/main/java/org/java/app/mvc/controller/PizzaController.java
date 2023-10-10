@@ -25,9 +25,12 @@ public class PizzaController {
 	
 	@Autowired
 	private PizzaRepo pizzaRepo;
+
+
+
 	
 	@GetMapping("/")
-	public String getIndex(@RequestParam(required=false) String nome, Model model) {
+	public String index(@RequestParam(required=false) String nome, Model model) {
 		
 		List<Pizza> pizze = null;
 		                         
@@ -39,16 +42,20 @@ public class PizzaController {
 		return "index";
 	}
 	
+
 	@GetMapping("/{id}")
-	public String pizza(@PathVariable int id, Model model) {
+	public String show(@PathVariable int id, Model model) {
 		
 		Pizza pizza = pizzaService.findById(id);
 		
 		model.addAttribute("pizza", pizza);
 		
 		return "show";
-	}
-	
+	}	
+
+
+
+
 	@GetMapping("/create-update")
 	public String create(Model model) {
 		
@@ -57,6 +64,7 @@ public class PizzaController {
 		return "create-update";
 	}
 	
+
 	@PostMapping("/create-update")
 	public String store(
 			@Valid @ModelAttribute("pizza") Pizza formPizza, 
@@ -71,6 +79,10 @@ public class PizzaController {
 		return "redirect:/";
 	}
 	
+
+
+
+
 	@GetMapping("/edit/{id}")
 	public String edit(
 			@PathVariable Integer id,
@@ -81,6 +93,7 @@ public class PizzaController {
 		return "create-update";
 	}
 	
+
 	@PostMapping("/edit/{id}")
 	public String update(
 			@Valid @ModelAttribute("pizza") Pizza formPizza,
@@ -94,4 +107,16 @@ public class PizzaController {
 		
 		return "redirect:/";
 	}
+
+
+
+
+	@PostMapping("/delete/{id}")
+	public String delete(
+		@PathVariable Integer id) {
+
+			pizzaRepo.deleteById(id);
+
+			return "redirect:/";
+		}
 }

@@ -22,3 +22,8 @@ label {
 li {
 	list-style: none;
 }
+
+a {
+	color: black;
+	text-decoration: none;
+}
